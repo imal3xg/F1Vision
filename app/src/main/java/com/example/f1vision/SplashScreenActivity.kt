@@ -14,24 +14,27 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
         val splashImage = findViewById<ImageView>(R.id.imageViewLogo)
+        val splashCreator = findViewById<ImageView>(R.id.imageCreator)
         // Aplicar la animación de aparecer
         val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
         splashImage.startAnimation(fadeInAnimation)
+        val fadeInAnimation2 = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+        splashCreator.startAnimation(fadeInAnimation)
 
         // Establecer un listener para la animación de aparecer
         fadeInAnimation.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {}
-
             override fun onAnimationEnd(animation: Animation?) {
                 // Aplicar la animación de desvanecer cuando la de aparecer termine
                 val fadeOutAnimation = AnimationUtils.loadAnimation(applicationContext, R.anim.fade_out)
                 splashImage.startAnimation(fadeOutAnimation)
+                splashCreator.startAnimation(fadeOutAnimation)
                 // Establecer la visibilidad de la imagen como GONE al finalizar la animación de desvanecimiento
                 fadeOutAnimation.setAnimationListener(object : Animation.AnimationListener {
                     override fun onAnimationStart(animation: Animation?) {}
-
                     override fun onAnimationEnd(animation: Animation?) {
                         splashImage.visibility = View.GONE
+                        splashCreator.visibility = View.GONE
                         // Ir a la siguiente actividad cuando la animación de desvanecer termine
                         startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
                         finish() // Finalizar la actividad de Splash Screen para evitar que el usuario regrese a ella
@@ -39,7 +42,6 @@ class SplashScreenActivity : AppCompatActivity() {
                     override fun onAnimationRepeat(animation: Animation?) {}
                 })
             }
-
             override fun onAnimationRepeat(animation: Animation?) {}
         })
     }
