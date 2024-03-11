@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">F1 Vision</string>
+    <string name="drivers">Pilotos</string>
+    <string name="meetings">Carreras</string>
 </resources>

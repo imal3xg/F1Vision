@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/circuitoListFragment"
+        android:title="@string/meetings"
+        android:icon="@drawable/f1"
+        android:textStyle="bold"
+        android:fontFamily="@font/formula1bold">
+    </item>
+    <item
+        android:id="@+id/pilotoListFragment"
+        android:title="@string/drivers"
+        android:icon="@drawable/f1"
+        android:textStyle="bold"
+        android:fontFamily="@font/formula1bold">
+    </item>
+</menu>

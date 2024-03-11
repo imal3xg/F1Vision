@@ -4,15 +4,18 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Circuit(
-    val meetingName: String,
-    val meetingOfficialName: String,
+data class Meeting(
+    val circuitKey: Long,
+    val circuitShortName: String,
+    val meetingKey: Long,
+    val meetingCode: String,
     val location: String,
     val countryKey: Long,
     val countryCode: String,
     val countryName: String,
-    val circuitKey: Long,
+    val meetingName: String,
+    val meetingOfficialName: String,
+    val gmtOffset: String,
     val dateStart: String,
-    val meetingKey: Long,
-    val year: Long,
+    val year: Long
 ) : Parcelable

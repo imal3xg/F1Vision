@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drivers_nav_graph"
+    app:startDestination="@id/driverListFragment">
+    <fragment
+        android:id="@+id/driverListFragment"
+        android:name="com.example.f1vision.ui.driver.list.DriverListFragment"
+        android:label="fragment_driver_list"
+        tools:layout="@layout/fragment_driver_list">
+        <action
+            android:id="@+id/action_driverListFragment_to_driverDetailFragment"
+            app:destination="@id/driverDetailFragment">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/driverDetailFragment"
+        android:name="com.example.f1vision.ui.driver.detail.DriverDetailFragment"
+        android:label="fragment_driver_detail"
+        tools:layout="@layout/fragment_driver_detail">
+        <argument
+            android:name="driver"
+            app:argType="com.example.f1vision.dara.repository.Driver">
+        </argument>
+    </fragment>
+</navigation>

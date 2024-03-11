@@ -10,11 +10,11 @@ data class Driver(
     val broadcastName: String,
     val countryCode: String,
     val firstName: String,
-    val lastName: String,
     val fullName: String,
-    val headshotUrl: String,
-    val driverId: Long,
-    val nameAcronym: String,
+    val headshotUrl: String?,
+    val lastName: String,
+    val driverNumber: Long,
+    val teamColour: String?,
     val teamName: String,
-    val teamColour: String,
+    val nameAcronym: String
 ) : Parcelable
